@@ -9,5 +9,7 @@ def shuffle(word)
 
 	#shuffle
 		is_unique?(word,letter_list)
-		
+
 end
+
+
