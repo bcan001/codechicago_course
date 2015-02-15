@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<dates>
+   <holiday id="New Years Day">
+      <name>New Years Day</name>
+      <day>2013/1/1</day>
+   </holiday>
+   <holiday id="Luther King Day">
+      <name>Luther King Day</name>
+      <day>2013/1/21</day>
+   </holiday>
+</dates>
