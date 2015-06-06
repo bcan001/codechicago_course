@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-5 col-md-offset-1">
+    <h2>Tasks</h2>
+  </div>
+
+  <!-- link to the new path (see remote:true in form) -->
+  <div class="col-md-2 col-md-offset-4">
+    <%= link_to new_task_path, remote: true do %>
+      <button class="btn btn-default">New</button>
+    <% end %>
+  </div>
+</div>
+
+<!-- renders the form for the new task -->
+<div class="row">
+  <div class="col-md-6 col-md-offset-2" id="task-form" style="display:none;"></div>
+</div>
+<!-- renders all the tasks form the controller -->
+<div class="row">
+  <div class="col-md-7 col-md-offset-1" id="tasks"><%= render @tasks %></div>
+</div>
+<!-- renders the form for the task you are trying to edit -->
+<div class="row">
+  <div class="col-md-6 col-md-offset-2" id="task-form-each" style="display:none;"></div>
+</div>
+
+
+
+
+
+
+
+<br/>
+<ul id="sortable">
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= link_to 'contact 1', contact1_path %></li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= link_to 'contact 2', contact2_path %></li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= link_to 'contact 3', contact3_path %></li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= link_to 'contact 4', contact4_path %></li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= link_to 'contact 1.1', contact1_path %></li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= link_to 'contact 1.2', contact1_path %></li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= link_to 'contact 5', contact5_path %></li>
+</ul>
+
+
+
+
+

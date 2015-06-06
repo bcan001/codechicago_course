@@ -1,0 +1,56 @@
+
+<div class="flex-container">
+  <div class="flex-item">
+
+		
+		<div class="gravatar"><%= gravatar_image_tag(@user.email) %></div>
+
+		<div class="profilefields">
+			<p><%= @user.username %></p>
+		
+				<p><%= @user.email %></p>
+		
+				<% if @user.posts.any? %>
+					<p># of Questions Asked: <%= @user.posts.count %></p>
+				<% end %>
+
+				<h4># of Friends: <%= @user.friendships.count %></h4>
+
+				<% if @user.friendships.any? %>
+					<h4>Friends:</h4>
+				<% end %>
+
+
+				<% @user.friendships.each do |f| %>
+
+					<p><%= f.friend.username %>
+					<%= f.friend.email %></p>
+					<p><%= link_to 'Remove', destroy_friend_path(f), :method => :delete %></p>
+
+				<% end %>
+
+				<h4>Friended By Users:</h4>
+				<% @user.inverse_friends.each do |f| %>
+						<p><%= f.username %></p>
+				<% end %>
+
+
+
+
+		</div>
+
+
+  </div>
+  <div class="flex-item">
+  	<h1>Questions</h1>
+		<% @posts.each do |p| %>
+			<strong><h3><%= p.title %></h3></strong>
+			<h4><%= p.body %></h4>
+			<% p.comments.each do |c| %>
+				<h5><%= c.text %></h5>
+				<p> ~ <%= c.commenter %></p>
+			<% end %>
+		<% end %>
+  </div>
+</div>
+

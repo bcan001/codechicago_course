@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="flex-container">
+  <div class="flex-item">
+
+    <h1>
+      <%= @post.title %>
+    </h1>
+
+    <h3>
+      <%= @post.body %>
+    </h3>
+
+    <%= flash[:notice] %>
+
+    <h2>Answer the question:</h2>
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <p>
+        Name<br>
+        <%= f.text_field :commenter %>
+      </p>
+      <p>
+        Answer<br>
+        <%= f.text_area :text %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+
+    <div class="buttons"><%= link_to 'Edit', edit_post_path(@post) %></div>
+    <div class="buttons"><%= link_to 'Back', posts_path %></div>
+
+  </div>
+
+  <div class="flex-item">
+    <h2>Current Answers:</h2>
+    <% @post.comments.each do |comment| %>
+      
+      <p>
+        <strong><%= comment.text %></strong>
+      </p>
+      <p> 
+        <%= comment.commenter %>
+      </p>
+
+    <% end %>
+
+  </div>
+</div>
+
+
+
+
+

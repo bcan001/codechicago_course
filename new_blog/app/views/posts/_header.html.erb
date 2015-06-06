@@ -1,0 +1,25 @@
+
+
+<% if current_user %>
+  <ul class="navbar">
+
+    <li class="navbar-item"><%= link_to 'Logout', log_out_path, method: 'delete' %></li>
+    <li class="navbar-item"><%= link_to 'My Profile', profile_page_path %></li>
+    <li class="navbar-item"><%= link_to 'All Users', all_users_path %></li>
+    <li class="navbar-item"><%= link_to 'New Question', new_post_path %></li>
+    <li class="navbar-item"><%= link_to 'Home', root_path %></li>
+    <li class="brand"><h1><%= link_to 'QBOARD', root_path %></h1></li>
+
+  </ul>
+  <p>Logged In As: <%= current_user.username %></p>
+
+<% else %>
+
+  <ul class="navbar">
+    <li class="navbar-item"><%= link_to 'Login', new_login_session_path %></li class="navbar-item">
+    <li class="navbar-item"><%= link_to 'Signup', new_user_signup_path %></li>
+    <li class="navbar-item"><%= link_to 'Home', root_path %></li>
+    <li class="brand"><h1><%= link_to 'QBOARD', root_path %></h1></li>
+  </ul>
+
+<% end %>

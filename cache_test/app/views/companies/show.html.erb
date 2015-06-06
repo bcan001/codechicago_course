@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+
+
+
+<h1>Listing Employees</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @company.employees.each do |employee| %>
+			<tr>
+				<td><%= employee.first_name %></td>
+				<td><%= employee.last_name %></td>
+				<td><%= employee.phone_number %></td>
+
+			</tr>
+		<% end %>
+	</tbody>
+
+</table>
+
+
+
