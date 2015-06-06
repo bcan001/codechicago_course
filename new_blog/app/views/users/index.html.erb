@@ -1,0 +1,14 @@
+<h2>Here are all the users:</h2>
+
+<% @users.each do |u| %>
+
+	<div class="inline">
+
+		<div class="gravatar"><%= gravatar_image_tag(u.email) %></div>
+
+		<p><%= link_to u.username, users_page_path(u) %></p>
+		<p><%= u.email %></p>
+		<%= link_to "Add As Friend", friendships_path(:friend_id => u), :method => :post %>
+	</div>
+
+<% end %>

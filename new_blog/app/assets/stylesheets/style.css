@@ -1,0 +1,75 @@
+.flex-container {
+	display: flex;
+}
+
+.flex-item {
+	background-color: gray;
+	margin: 10px;
+	padding: 10px;
+	flex: 1;
+}
+
+
+#heads {
+	text-align: center;
+}
+#head1 {
+	background-color: white;
+}
+#head2 {
+	background-color: white;
+}
+
+
+
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar-item {
+    float: right;
+}
+
+.brand {
+		float: left;
+}
+
+a:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #8a8491;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover, a:active {
+    background-color: #919184;
+}
+
+
+
+.buttons {
+	display: inline-block;
+}
+
+
+.gravatar {
+    text-align: center;
+}
+.profilefields {
+    text-align: center;
+}
+
+.inline {
+    display: inline-block;
+    padding: 100px;
+}
+

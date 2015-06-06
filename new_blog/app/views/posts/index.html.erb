@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div id="heads" class="flex-container">
+  <div id="head1" class="flex-item"><h2>Current Questions</h2></div>
+  <div id="head2" class="flex-item"><h2>Answers</h2></div>
+</div>
+
+
+<% @posts.each do |post| %>
+  <div class="flex-container">
+     <div class="flex-item">
+       
+        <h2><%= post.title %></h2>
+        <h4><%= post.body %></h4>
+
+        
+        <% if current_user %>
+          <div class="buttons">
+            <%= link_to('Show',post) %>
+          </div>
+          <div class="buttons">
+            <%= link_to 'Edit', edit_post_path(post) %>
+          </div>
+          <div class="buttons">
+            <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+
+    </div>
+
+     <div class="flex-item">
+       <% post.comments.each do |c| %>
+
+          <h3><%= c.text %></h3>
+          <p> ~ <%= c.commenter %></p>
+        
+      <% end %>
+     </div>
+  </div>   
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+

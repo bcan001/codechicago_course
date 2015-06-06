@@ -1,0 +1,44 @@
+
+<h1>Sign up</h1>
+
+<%= form_for @user do |f| %>
+<ul>
+  <li><%= f.label :username, 'Username:' %></li>
+  <% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.messages[:username].each do |error| %>
+      <li>Username <%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <li><%= f.text_field :username %></li>
+  <li><%= f.label :email, 'Email:' %></li>
+  <% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.messages[:email].each do |error| %>
+      <li>Email <%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <li><%= f.text_field :email %></li>
+  <li><%= f.label :password, 'Password:' %></li>
+  <% if @user.errors.any? %>
+    <ul>
+    <% @user.errors.messages[:password].each do |error| %>
+      <li>Password <%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <li><%= f.password_field :password %></li>
+  <li><%= f.label :password_confirmation, 'Confirm your password:' %></li>
+    <% if @user.errors.any? %>
+      <ul>
+      <% @user.errors.messages[:password_confirmation].each do |error| %>
+        <li>Password confirmation <%= error %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  <li><%= f.password_field :password_confirmation %></li>
+  <li><%= f.submit 'Sign up' %></li>
+</ul>
+<% end %>
